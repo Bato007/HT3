@@ -67,5 +67,7 @@ public class Main {
         } catch (IOException e) {
             System.out.println("Did do");
         }
+
+        System.out.print("Se han terminado de ordenar los objetos");
     }
 }
