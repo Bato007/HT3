@@ -1,5 +1,8 @@
 import org.junit.Test;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import static org.junit.Assert.*;
@@ -17,19 +20,30 @@ public class QuickTest {
         ArrayList<CompareNumber> list2 = new ArrayList<>();
         Sort sortType = new Quick();
 
-        list.add(new CompareNumber(5));
-        list.add(new CompareNumber(4));
-        list.add(new CompareNumber(1));
-        list.add(new CompareNumber(8));
-        list.add(new CompareNumber(9));
-        list.add(new CompareNumber(0));
+        //"SortedData.txt"
+        //"UnsortedData.txt"
+        String read = "UnsortedData.txt", readTxt;
+        try {
+            FileReader fr = new FileReader(read);
+            BufferedReader bf = new BufferedReader(fr);
 
-        list2.add(new CompareNumber(0));
-        list2.add(new CompareNumber(1));
-        list2.add(new CompareNumber(4));
-        list2.add(new CompareNumber(5));
-        list2.add(new CompareNumber(8));
-        list2.add(new CompareNumber(9));
+            while((readTxt = bf.readLine()) != null){
+                list.add(new CompareNumber(Integer.parseInt(readTxt)));
+            }
+
+            bf.close();
+
+            FileReader fr2 = new FileReader("SortedData.txt");
+            BufferedReader bf2 = new BufferedReader(fr2);
+
+            while((readTxt = bf2.readLine()) != null){
+                list2.add(new CompareNumber(Integer.parseInt(readTxt)));
+            }
+
+            bf2.close();
+        } catch (IOException e) {
+            System.out.println("Did do");
+        }
 
         sortType.sort(list);
 

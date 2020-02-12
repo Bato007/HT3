@@ -19,8 +19,7 @@ public class Merge extends AbstractSort implements Sort{
      */
     @Override
     public ArrayList<CompareNumber> sort(ArrayList<CompareNumber> list) {
-        ArrayList<CompareNumber> temporal = new ArrayList<CompareNumber>();
-        temporal.addAll(list);
+        ArrayList<CompareNumber> temporal = new ArrayList<CompareNumber>(list);
         mergeSortRecursive(list, temporal, 0, list.size() -1);
         return list;
     }

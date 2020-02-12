@@ -12,7 +12,7 @@ import java.util.Vector;
 public class Radix extends AbstractSort implements Sort {
 
     // Atributo que a la que se le hara el sort
-    ArrayList<CompareNumber> listS;
+    private ArrayList<CompareNumber> listS;
 
     /**
      * Método que ordena la lista por medio de selección
