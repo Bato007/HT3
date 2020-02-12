@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 /**
  * @author Brandon Hernández 19376
- * @since 10/02/2020
+ * @since 11/02/2020
  * @version 10/02/2020
  * @className Merge.java
  * Literatura Citada: Bailey, D. (septiembre 2007). "Java Stuctures Data Structure in Java
